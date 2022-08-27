@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Conditioner {
 
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(new FileReader("input.txt"));
-             PrintStream printStream = new PrintStream("output.txt")) {
+        try (Scanner scanner = new Scanner(new FileReader("src/contest1/B_Triangle/input.txt"));
+             PrintStream printStream = new PrintStream("src/contest1/B_Triangle/output.txt")) {
             int tRoom = scanner.nextInt();
             int tCond = scanner.nextInt();
             String mode = scanner.next();
