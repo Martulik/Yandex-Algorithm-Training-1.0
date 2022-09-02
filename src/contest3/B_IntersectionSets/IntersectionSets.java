@@ -14,6 +14,7 @@ public class IntersectionSets {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/contest3/B_IntersectionSets/input.txt"));
              PrintStream ps = new PrintStream("src/contest3/B_IntersectionSets/output.txt")) {
+            check();
             getIntersectionSets(readList(br), readList(br)).forEach(x -> ps.print(x + " "));
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,5 +32,10 @@ public class IntersectionSets {
         TreeSet<Integer> set = new TreeSet<>(list1);
         set.retainAll(new TreeSet<>(list2));
         return set;
+    }
+
+    private static void check() {
+        assert getIntersectionSets(List.of(1, 3, 2), List.of(4, 3, 2)).equals(new TreeSet<>(List.of(2, 3)));
+        assert getIntersectionSets(List.of(1, 2, 6, 4, 5, 7), List.of(10, 2, 3, 4, 8)).equals(new TreeSet<>(List.of(2, 4)));
     }
 }
