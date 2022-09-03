@@ -44,8 +44,8 @@ public class Cubes {
 
     private static void printSet(TreeSet<Integer> set, PrintStream ps) {
         ps.println(set.size());
-        set.forEach(x -> ps.print(x + " "));
-        ps.println();
+        String[] setAsArrayOfStrings = Arrays.stream(set.toArray()).map(String::valueOf).toArray(String[]::new);
+        ps.println(String.join(" ", setAsArrayOfStrings));
     }
 
 }
